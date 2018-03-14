@@ -1,4 +1,7 @@
-
+/*
+ *Author: Simon Huang
+ *Date: 3/14/17 
+ */
 public class Card {
 
 	private String rank;
@@ -47,7 +50,6 @@ public class Card {
 	
 	@Override
 	public String toString() {
-		return "Cards [getRank()=" + getRank() + ", getSuit()=" + getSuit() + ", getPointvalue()=" + getPointvalue()
-				+ "]";
+		return "This is a" + getRank() + "of" + getSuit() + "valued at" + getPointvalue();
 	}
 }
