@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class DeckTester {
 
@@ -9,7 +10,20 @@ public class DeckTester {
 		int[] values = {1,2,3,4,5,6,7,8,9,10,11,12,13};
 		
 		Deck unDealt = new Deck(ranks,suits,values);
-		System.out.print(unDealt);
+		//Deck.shuffle(unDealt);
+		
+		while (unDealt.size() > 0)
+		{
+			Deck.deal();
+		}
+		
+		for (int x = 0; x < 51; x++)
+		{
+			System.out.println(Deck.getDealt().get(x));
+			
+		}
+		//System.out.print(Deck.getDealt());
+
 	}
 	
 }

@@ -50,6 +50,6 @@ public class Card {
 	
 	@Override
 	public String toString() {
-		return "This is a" + getRank() + "of" + getSuit() + "valued at" + getPointvalue();
+		return getRank() + " of " + getSuit();
 	}
 }
