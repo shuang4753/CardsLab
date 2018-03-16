@@ -11,9 +11,9 @@ public class Deck {
 
 	public Deck(String[] ranks, String[] suits, int[] values)
 	{
-		for (int x = 0; x < ranks.length-1; x++)
+		for (int x = 0; x < ranks.length; x++)
 		{
-			for (int y = 0; y < suits.length-1; y++)
+			for (int y = 0; y < suits.length; y++)
 			{
 				unDealt.add(0, new Card(ranks[x],suits[y],values[x]));
 			}
@@ -36,10 +36,11 @@ public class Deck {
 
 	public static Card deal()
 	{
-			Card top = unDealt.remove(0);
-			Dealt.add(top);
-			
-			return top;  	
+
+		Card top = unDealt.remove(0);
+		Dealt.add(top);
+
+		return top;  	
 	}
 
 	public static void shuffle(Deck deck)
@@ -49,7 +50,7 @@ public class Deck {
 			int r = (int)(Math.random()*k);
 			Card temp = unDealt.get(r);
 			unDealt.set(r, unDealt.get(k));
-			unDealt.set(r, temp);
+			unDealt.set(k, temp);
 		}
 
 	}
