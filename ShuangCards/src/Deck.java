@@ -1,13 +1,14 @@
 /*
  *Author: Simon Huang
  *Date: 3/14/17 
+ *Period 2
  */
 import java.util.ArrayList;
 
 public class Deck {
 
-	private static ArrayList<Card> unDealt = new ArrayList<Card>() ;
-	private static ArrayList<Card> Dealt = new ArrayList<Card> (); 
+	private ArrayList<Card> unDealt = new ArrayList<Card>() ;
+	private ArrayList<Card> Dealt = new ArrayList<Card> (); 
 
 	public Deck(String[] ranks, String[] suits, int[] values)
 	{
@@ -20,7 +21,7 @@ public class Deck {
 		}
 	}
 
-	public static boolean isEmpty()
+	public boolean isEmpty()
 	{
 		if (unDealt.size()==0)
 		{
@@ -29,22 +30,28 @@ public class Deck {
 		else return false;
 	}
 
-	public static int size()
+	public int size()
 	{
 		return unDealt.size();
 	}
 
-	public static Card deal()
+	public  Card deal()
 	{
+		if (!(unDealt.isEmpty()))
+		{
+			Card top = unDealt.remove(0);
+			Dealt.add(top);
+			return top; 
+		}
 
-		Card top = unDealt.remove(0);
-		Dealt.add(top);
+		else return null;
 
-		return top;  	
 	}
 
-	public static void shuffle(Deck deck)
+	public void shuffle()
 	{
+		unDealt.addAll(getDealt());
+		
 		for (int k = 1; k < 52; k++)
 		{
 			int r = (int)(Math.random()*k);
@@ -55,24 +62,20 @@ public class Deck {
 
 	}
 
-	public static ArrayList<Card> getUnDealt() {
+	public ArrayList<Card> getUnDealt() {
 		return unDealt;
 	}
 
-	public static void setUnDealt(ArrayList<Card> unDealt) {
-		Deck.unDealt = unDealt;
+	public void setUnDealt(ArrayList<Card> unDealt) {
+		this.unDealt = unDealt;
 	}
 
-	public static ArrayList<Card> getDealt() {
+	public ArrayList<Card> getDealt() {
 		return Dealt;
 	}
 
-	public static void setDealt(ArrayList<Card> dealt) {
-		Dealt = dealt;
+	public void setDealt(ArrayList<Card> dealt) {
+		this.Dealt = dealt;
 	}
 
-	@Override
-	public String toString() {
-		return "Deck [toString()=" + super.toString() + "]";
-	}
 }

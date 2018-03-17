@@ -1,6 +1,7 @@
 /*
  *Author: Simon Huang
  *Date: 3/14/17 
+ *Period 2
  */
 public class Card {
 
